@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import Layout, { siteTitle } from '../../components/layout';
+import utilStyles from '../../styles/utils.module.css';
+import { getSortedPostsData, getAllPostIds } from '../../lib/posts';
 import Link from 'next/link';
-import Date from '../components/date';
-
+import Date from '../../components/date';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -15,14 +14,14 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({allPostsData}) {
+export default function Post({allPostsData}) {
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{allPostsData.id}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hello, I'm Jie Cai, a doctor candidate in peking university.</p>
+        <p>Hello, I'm Jie Cai a doctor candidate in pku.</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>My Article</h2>
@@ -32,10 +31,6 @@ export default function Home({allPostsData}) {
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
             </div>
           ))}
         </div>

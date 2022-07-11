@@ -22,7 +22,7 @@ export default function Home({allPostsData}) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hello, I'm Jie Cai, a doctor candidate in peking university.</p>
+        <p>Hello, I'm Jie Cai a doctor candidate in pku.</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>My Article</h2>

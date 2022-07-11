@@ -4,7 +4,7 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-const name = 'Jie Cai';
+const name = 'J. Cai';
 export const siteTitle = 'J. Cai\'s Sample Website';
 
 export default function Layout({ children, home }) {
@@ -30,10 +30,10 @@ export default function Layout({ children, home }) {
           <>
             <Image
               priority
-              src="/images/profile.jpg"
-              className={utilStyles.borderRound}
+              src="/images/profile.jpeg"
+              className={utilStyles.borderCircle}
               height={144}
-              width={244}
+              width={144}
               alt={name}
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -44,7 +44,7 @@ export default function Layout({ children, home }) {
               <a>
                 <Image
                   priority
-                  src="/images/profile.jpg"
+                  src="/images/profile.jpeg"
                   className={utilStyles.borderCircle}
                   height={108}
                   width={108}

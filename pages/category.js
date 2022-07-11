@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
+import { getSortedPostsData } from '../lib/category';
 import Link from 'next/link';
 import Date from '../components/date';
 
@@ -22,14 +22,14 @@ export default function Home({allPostsData}) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hello, I'm Jie Cai, a doctor candidate in peking university.</p>
+        <p>Hello, I'm Jie Cai a doctor candidate in pku.</p>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>My Article</h2>
         <div className={utilStyles.divItem}>
           {allPostsData.map(({ id, date, title }) => (
             <div className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
+              <Link href={`/${id}Index`}>
                 <a>{title}</a>
               </Link>
               <br />
